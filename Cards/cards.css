@@ -1,0 +1,490 @@
+
+body > * {
+  vertical-align: top;
+  font-family: Helvetica, sans-serif
+}
+
+.card-container {
+  display: inline-block;
+  overflow: hidden;
+}
+.screen .card-container {
+  width: 242px;
+  height: 344px;
+  margin: 8px;
+}
+.print .card-container {
+  width: 280px;
+  height: 384px;
+}
+
+.template-outline {
+  display: inline-block;
+  position: relative;
+  width: 240px;
+  height: 336px;
+  top: 0px;
+  left: 0px;
+}
+.screen .template-outline {
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 3mm;
+}
+.print .template-outline {
+  top: 20px;
+  left: 20px;
+}
+
+.round-outline-container {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 280px;
+  height: 376px;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.round-outline {
+  position: absolute;
+  top: 0px;
+  height: 376px;
+  width: 400px;
+}
+.round-outline span {
+  position: absolute;
+  display: inline-block;
+  background-image: url("CardImages/silver-pattern.jpg");
+}
+.round-outline-top, .round-outline-bottom {
+  height: 40px;
+  width: 360px;
+}
+.round-outline-left-edge, .round-outline-right-edge {
+  width: 20px;
+  height: 296px;
+}
+.round-outline-up-left, .round-outline-up-right,
+    .round-outline-down-left, .round-outline-down-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.round-outline-up-left {
+  top: 20px;
+  left: 0px;
+}
+.round-outline-top {
+  top: 0px;
+  left: 20px;
+}
+.round-outline-up-right {
+  top: 20px;
+  left: 360px;
+}
+.round-outline-left-edge {
+  top: 40px;
+  left: 0px;
+}
+.round-outline-center {
+  top: 40px;
+  left: 20px;
+}
+.round-outline-right-edge {
+  top: 40px;
+  left: 380px;
+}
+.round-outline-down-left {
+  top: 316px;
+  left: 0px;
+}
+.round-outline-bottom {
+  top: 336px;
+  left: 20px;
+}
+.round-outline-down-right {
+  top: 316px;
+  left: 360px;
+}
+
+.round-outline span.round-outline-center {
+  width: 360px;
+  height: 296px;
+  border-radius: 20px;
+  background-image: none;
+  background-color: white;
+}
+
+.case-outline {
+  left: 190px;
+}
+.following-outline {
+  left: -40px;
+}
+.conclusion-outline {
+  left: -310px;
+}
+
+.keyword {
+  position: relative;
+  font-weight: bold;
+  font-style: italic;
+}
+.keyword.qualified {
+  line-height: 16px;
+}
+.qualifier {
+  position: absolute;
+  bottom: -8px;
+  left: 6px;
+  font-size: 7px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.progress.icon, .opposition.icon, .jeopardy.icon {
+  display: inline-block;
+  height: 12px;
+  width: 3.5px;
+  border-radius: 2px;
+  position: relative;
+  top: 1.5px;
+}
+.environment.icon {
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  background-image: url("CardImages/right-facing-armenian-eternity-sign.png");
+  background-size: cover;
+}
+
+.card-type-container {
+  padding: 0px 3px 2px 5px;
+  border-radius: 9px;
+  background-color: white;
+}
+.case-card {
+  float: left;
+  margin-left: 12px;
+}
+.conclusion-card {
+  float: right;
+  margin-right: 12px;
+}
+.card-type {
+  display: inline-block;
+  font-size: 8px;
+  line-height: 8px;
+  font-weight: bold;
+  background-color: #e0e0ff;
+  padding: 1px 6px;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+.card-theme-container {
+  float: right;
+  margin-right: 24px;
+  margin-left: 4px;
+}
+.card-theme {
+  font-size: 8px;
+  line-height: 8px;
+  font-weight: bold;
+  background-color: #e0e0ff;
+  padding: 0px 2px;
+}
+.card-theme + .card-theme {
+  border-top: 0.5px solid #000;
+}
+
+.image-frame {
+  position: relative;
+  width: 186px;
+  border: 3px solid #ddd;
+  margin-left: 24px;
+}
+.image-frame img {
+  width: 100%;
+}
+.cc {
+  position: absolute;
+  font-size: 4px;
+  transform-origin: bottom left;
+  transform: rotate(90deg);
+}
+.copyright-attribution {
+  top: -7px;
+  left: -10px;
+}
+.copyright-reservation {
+  top: -7px;
+  right: -114px;
+}
+
+.card-set-logo {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+  left: 218px;
+
+  background-color: #ffffff;
+  border: solid 0.5px #641E16;
+  border-radius: 6px;
+  overflow: hidden;
+
+  text-align: center;
+  line-height: 12px;
+}
+.card-set-logo img {
+  width: 10px;
+  height: 10px;
+}
+.card-sequence {
+  position: absolute;
+  top: 23px;
+  left: 218px;
+  font-size: 4px;
+}
+
+.text {
+  width: 184px;
+  margin-left: 24px;
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+p {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: 0;
+}
+
+.name {
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 16px;
+}
+.flavor-text, .bio-text {
+  font-size: 9px;
+  line-height: 9px;
+  font-style: italic;
+  padding-left: 4px;
+}
+.bio-text {
+  height: 34px;
+}
+.attribute-text {
+  min-height: 30px;
+  font-size: 11px;
+  line-height: 12px;
+}
+.themes-text {
+  font-size: 11px;
+  line-height: 13px;
+}
+.themes-text li {
+  margin-left: 10px;
+}
+.episodeDivider {
+  font-size: 6px;
+  margin-left: 2px;
+}
+.episodeInfo {
+  white-space: nowrap;
+  font-size: 6px;
+}
+.episodeNumber {
+  display: inline-block;
+  background-color: #ccffcc;
+  border-radius: 4.5px;
+  padding: 0px 2px;
+  margin: 0px 2px;
+  font-style: normal;
+}
+.episodeNumber.environment {
+  background-color: #e0e0ff;
+}
+.episodeTitle {
+  font-weight: bold;
+  font-style: normal;
+}
+.episodeTitle:before, .episodeTitle:after {
+  content: "\"";
+  font-weight: normal;
+}
+
+.score-adjust {
+  display: inline-block;
+  border-radius: 4.5px;
+  padding: 0px 3px;
+  margin: 0px 0px;
+}
+
+.investment {
+  position: absolute;
+  bottom: 8px;
+  left: 56px;
+
+  font-size: 12px;
+  line-height: 12px;
+  text-shadow: 0px 0px 4px #ffffff, 1.5px 1.5px 3px #ffffff;
+}
+
+.ordinality {
+  position: absolute;
+  left: 8px;
+
+  width: 9px;
+  height: 9px;
+  line-height: 9px;
+
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+.in-play {
+  top: 8px;
+}
+.in-deck {
+  top: 19px;
+}
+
+.circumstance {
+  position: absolute;
+  width: 3px;
+  height: 28px;
+  border: 2px solid;
+  border-radius: 5px;
+
+  padding-left: 1px;
+  padding-right: 2px;
+  color: white;
+  font-size: 10px;
+  line-height: 7px;
+}
+.circumstance.not {
+  font-size: 6px;
+}
+.requires {
+  left: 2px;
+}
+.requires.second {
+  left: 13px;
+}
+.establishes {
+  right: 2px;
+}
+.circumstance.missing {
+  background-color: white;
+}
+.advancing, .progress {
+  top: 150px;
+  background-color: #F9E79F;
+  border-color: #F9E79F;
+}
+.opposed, .opposition {
+  top: 185px;
+  background-color: #7F8C8D;
+  border-color: #7F8C8D;
+}
+.jeopardy {
+  top: 220px;
+  background-color: #641E16;
+  border-color: #641E16;
+}
+
+.value {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 16px;
+  text-align: center;
+}
+.value img {
+  width: 16px;
+  height: 16px;
+  margin-top: 8px;
+}
+.environment {
+  right: 8px;
+  bottom: 6px;
+}
+.draw-value {
+  left: 8px;
+  bottom: 6px;
+  font-size: 20px;
+  background-color: #ccccff;
+}
+.point-value {
+  right: 8px;
+  bottom: 6px;
+  font-size: 14px;
+}
+.positive {
+  background-color: #ccffcc;
+}
+.negative {
+  background-color: #ffcccc;
+}
+
+.crop {
+  position: absolute;
+  z-index: -1;
+}
+.crop-marks {
+  height: 18px;
+  width: 18px;
+  border: solid black;
+}
+.crop-margin {
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+}
+.crop-marks.ul {
+  border-width: 0px 1px 1px 0px;
+  top: -19px;
+  left: -19px;
+}
+.crop-marks.dl {
+  border-width: 1px 1px 0px 0px;
+  bottom: -19px;
+  left: -19px;
+}
+.crop-marks.ur {
+  border-width: 0px 0px 1px 1px;
+  top: -19px;
+  right: -19px;
+}
+.crop-marks.dr {
+  border-width: 1px 0px 0px 1px;
+  bottom: -19px;
+  right: -19px;
+}
+.crop-margin.ul {
+  top: -6px;
+  left: -6px;
+}
+.crop-margin.dl {
+  bottom: -6px;
+  left: -6px;
+}
+.crop-margin.ur {
+  top: -6px;
+  right: -6px;
+}
+.crop-margin.dr {
+  bottom: -6px;
+  right: -6px;
+}
+

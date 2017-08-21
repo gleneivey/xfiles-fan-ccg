@@ -1,0 +1,168 @@
+
+---------------------------------------------------------------------------
+				CARDS
+
+
+Card organization:
+  Starter decks --
+    Fixed (identical in all starters)
+      full set of basic environment cards
+      full set of concealment cards
+    Fixed (starter 'A' content)
+      39 cards, ......
+    Fixed (starter 'B' content)
+      39 cards, ......
+    Random
+      13 randomly assorted cards, equivalent to 1 booster pack
+
+  Boosters packs --
+    13 cards each, as follows:
+    Common    7 randomly selected out of 65 possible
+    Uncommon  4 randomly selected out of 65 possible
+    Rare      2 randomly selected out of 65 possible
+
+
+complete first set, broken down by card organization
+   3 fixed starter deck environment cards
+  27 fixed starter deck concealment cards
+  39 cards, fixed starter deck 'A'
+  39 cards, fixed starter deck 'B'
+  65 Common cards
+  65 Uncommon cards
+  65 Rare cards
+ ---
+ 303 (195 + 78 + 27 + 3)
+
+
+kinds of cards:
+  environment
+    X-Files, Scully, Mulder
+    each may provide aspects (attributes?)
+    X-Files cards provide themes
+    additional environment cards names may be added in subsequent sets
+      (Skinner, Monica, Robert Pattrick's character, etc.)
+    card play during turns may
+      replace an environment card with a different version having the same name
+      take an environment card out of play
+      return an environment card to play
+      "cover" an environment card with another card that modifies the environment
+  concealment (secrecy?)
+    used to allow other cards to be played (temporarily) face down
+  case
+    starts a trick, represents something to be investigated
+  incident
+    starts a trick, represents something that happens to the characters
+  conclusion
+    ends a trick, represents the end of acivity following the case/incident
+  event (action?) cards:
+
+complete first set, broken down by card type
+  1 starter-deck environment Scully (from pilot episode)
+  1 starter-deck environment Mulder (from pilot episode)
+  1 starter-deck environment X-Files (from pilot episode)
+>23 case/incident cards (1+ per episode in season 1)
+>23 conclusion cards (1+ per episode in season 1)
+
+
+
+card aspects:
+  name, flavor, image
+  draw value (number, 0..??)
+  point value (number, positive or negative; no value indicated by absence)
+  environment indicator (present/absent)
+  Investment (present on character environment cards)
+  ordinality indicator(s) (present/absent)
+    unique/max in deck, unique/max in play
+  aspects (text/controlled vocabulary)
+  location (text/controlled vocabulary)
+  theme (present on X-Files cards; text/controlled vocabulary)
+  requirements (list of items matched to aspects/location/theme of cards played earlier)
+  required circumstance indicator(s)
+    1 to 3 colored pips on the left edge of the card
+    indicates which other cards this card can be be played after
+  established circumstance indicator(s)
+    1 to 3 colored pips on the right edge of the card
+    indicates the circumstances CREATED BY playing the current card
+    presence of a pip indicates the circumstance is produced by the card
+    absence of a pip indicates the circumstance is eliminated by the card
+    presence of a translucent arrow indicates the circumstance may be present, depending on the state before the card ways played
+
+
+circumstances:
+  investigation advancing
+  being opposed
+  in physical jeopardy
+
+themes:
+  Alien Encounters
+  Supernatural Phenomena
+  Cryptozoology
+  Crime
+  The Conspiracy
+
+locations:
+  Washington, D.C.
+  crime scene
+
+
+---------------------------------------------------------------------------
+				RULES
+
+
+BEFORE PLAY
+  decks:
+    draw deck size:  3x13 to 5x13 (39 to 65) cards
+    setup deck size:  up to 6 cards
+    sideboard size:  13(??) cards
+      swap cards between deck and sideboard, 1:1, at the end of each rubber
+    concealment cards:  any number on hand
+
+
+PLAY
+  sequence:
+    Setup
+      determine first player
+        shuffle deck, draw
+        highest revealed card number wins
+        repeat from draw if cards equal OR no reveal
+	winner decides which player will play first
+      establish the field
+        starting with the first player
+	players alternate in performing the following:
+          place a Scully card
+	  place a Mulder card
+	  place an X-Files card
+	  take first normal turn
+      draw a hand
+        before the first turn
+	  of the game
+	  of a new rubber
+        both players
+	  move all cards from their hand and/or discard pile to their draw deck
+	  swap any cards desired between their draw deck and sideboard
+	  shuffle their draw decks, face down
+	  take 13 cards from the top of their draw deck to form their hand
+    Turns
+      play consists of three rubbers
+      a rubber:
+        lasts for 1+ tricks
+	ends at the end of the trick that is in progress when one of the players draws the last card from their deck
+	is scored separately, keeping track of which player wins (high score) each one
+      a trick:
+        lasts for 2+ turns
+	includes all cards played in those turns
+	excludes cards played during Setup
+	is "taken" by the player who places the last card included in the trick
+      players alternate turns
+      turns consist of 0+ cards played by the same player
+
+  Requirements for playing in tricks
+    if both players pass their turns sequentially without playing any cards,
+      before the next turn, both players shuffle their hands into their draw decks and draw a new hand
+    case/incident cards may only be played as the first card in a trick
+    if it is the player's turn and there is no trick in progress
+      if they have one or more case/incident cards that may be played
+        they must play one,
+        otherwise they cannot play any card into the trick
+        
+

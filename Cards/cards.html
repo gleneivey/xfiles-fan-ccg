@@ -1,0 +1,620 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="cards.css">
+    <script src="cards.js"></script>
+  </head>
+  <body id="bodyEl">
+    <div id="react-root"></div>
+    <script type="text/babel">
+      var bodyClass = "screen";
+      var body = document.getElementById("bodyEl");
+      body.className = bodyClass;
+
+      var Card = React.createClass({
+        render: function () {
+          if (bodyClass === "screen") {
+            return (
+              <div key={this.props.cardNum} className="card-container">
+                <div className="card template-outline">
+                  {this.props.children}
+                </div>
+              </div>
+            );
+          } else {
+            return (
+              <div key={this.props.cardNum} className="card-container">
+                <div className="card template-outline">
+                  <div className="crop crop-marks ul"></div>
+                  <div className="crop crop-margin ul"></div>
+                  <div className="crop crop-marks dl"></div>
+                  <div className="crop crop-margin dl"></div>
+                  <div className="crop crop-marks ur"></div>
+                  <div className="crop crop-margin ur"></div>
+                  <div className="crop crop-marks dr"></div>
+                  <div className="crop crop-margin dr"></div>
+                  {this.props.children}
+                </div>
+              </div>
+            );
+          }
+        }
+      });
+
+      var Cards = React.createClass({
+        render: function () {
+          console.log("rendering!");
+          var self = this;
+          var cardNum = 1;
+          var cards = this.props.cards.map(function (card) {
+            card.setSize = self.props.cards.length;
+            card.cardNum = cardNum++;
+
+            var cardElements;
+            if (card.type === "environment") {
+              cardElements = self.environmentCard_(card);
+            } else if (card.type === "case" || card.type === "incident") {
+              cardElements = self.caseCard_(card);
+            } else if (card.type === "conclusion") {
+              cardElements = self.conclusionCard_(card);
+            } else if (card.type === "following") {
+              cardElements = self.followingCard_(card);
+            }
+            return cardElements
+          });
+
+          return (
+            <div id="cards">
+              {cards}
+            </div>
+          );
+        },
+
+        environmentCard_: function (card) {
+          var bio = null;
+          if (card.bio) {
+            bio = (
+              <div className="text bio-text">
+               {card.bio}
+              </div>
+            );
+          }
+
+          return (
+            <Card cardNum={card.cardNum}>
+              {this.heading_(card)}
+              {bio}
+              {this.image_(card)}
+              {this.flavorText_(card)}
+              {this.provides_(card)}
+              {this.themes_(card)}
+              {this.investment_(card)}
+
+              {this.drawValue_(card)}
+              {this.environmentMark_()}
+            </Card>
+          );
+        },
+
+        caseCard_: function (card) {
+          return (
+            <Card cardNum={card.cardNum}>
+              {this.roundOutline_("case")}
+
+              {this.heading_(card)}
+              {this.image_(card)}
+
+              {this.cardType_(card.type)}
+              {this.flavorText_(card)}
+
+              {this.cardTheme_(card)}
+              {this.body_(card)}
+
+              {this.playOrdinality_(card)}
+              {this.deckOrdinality_(card)}
+              {this.circumstances_(card)}
+              {this.drawValue_(card)}
+              {this.pointValue_(card)}
+            </Card>
+          );
+        },
+
+        conclusionCard_: function (card) {
+          return (
+            <Card cardNum={card.cardNum}>
+              {this.roundOutline_("conclusion")}
+
+              {this.heading_(card)}
+              {this.image_(card)}
+
+              {this.cardType_("Conclusion")}
+              {this.flavorText_(card)}
+
+              {this.cardTheme_(card)}
+              {this.body_(card)}
+
+              {this.playOrdinality_(card)}
+              {this.deckOrdinality_(card)}
+              {this.circumstances_(card)}
+              {this.drawValue_(card)}
+              {this.pointValue_(card)}
+            </Card>
+          );
+        },
+
+        followingCard_: function (card) {
+          return (
+            <Card cardNum={card.cardNum}>
+              {this.roundOutline_("following")}
+
+              {this.heading_(card)}
+              {this.image_(card)}
+              {this.flavorText_(card)}
+              {this.body_(card)}
+
+              {this.playOrdinality_(card)}
+              {this.deckOrdinality_(card)}
+              {this.circumstances_(card)}
+              {this.investment_(card)}
+              {this.drawValue_(card)}
+              {this.pointValue_(card)}
+            </Card>
+          );
+        },
+
+        provides_: function (card) {
+          if (card.provides) {
+            return (
+              <div className="text attribute-text">
+                {card.provides.join(" \u2022 ")}
+              </div>
+            );
+          } else {
+            return null;
+          }
+        },
+
+        themes_: function (card) {
+          if (card.themes) {
+            var key = 0;
+            var themes = card.themes.map(function (theme) {
+              return (
+                <li key={key++}>{theme}</li>
+              );
+            });
+
+            return (
+              <ul className="text themes-text">
+                {themes}
+              </ul>
+            );
+          } else {
+            return null;
+          }
+        },
+
+        investment_: function (card) {
+          if (card.investmentText) {
+            var investmentValue = card.investmentValue < 0 ?
+                card.investmentValue : "+"+card.investmentValue;
+            return (
+              <div className="investment">
+                {card.investmentText}: {investmentValue}
+              </div>
+            );
+          } else {
+            return null;
+          }
+        },
+
+        heading_: function (card) {
+          return (
+            <div>
+              <div className="card-set-logo">
+                <img src="CardImages/logo.jpg" />
+              </div>
+              <div className="card-sequence">
+                {card.cardNum}/{card.setSize}
+              </div>
+              {this.name_(card)}
+            </div>
+          );
+        },
+
+        name_: function (card) {
+          console.log("  card: " + card.name + " (" + card.cardNum + ")");
+          if (card.nameExtraStyles) {
+            var stylesHash = eval("var x = " + card.nameExtraStyles + "; x");
+            return (
+              <div
+                className="text name"
+                style={stylesHash}
+              >{card.name}</div>
+            );
+          } else {
+            return (
+              <div className="text name">{card.name}</div>
+            );
+          }
+        },
+
+        image_: function (card) {
+          return (
+            <div className="image-frame">
+              <img src={"CardImages/" + card.imageFile} />
+              <div className="cc copyright-attribution">
+                The "X-Files," characters, images are ™/Ⓒ 20th Century Fox.
+              </div>
+              <div className="cc copyright-reservation">
+                Game text/mechanics, card layouts &copy; Glen E. Ivey CC-BY-NC 4.0
+              </div>
+            </div>
+          );
+        },
+
+        cardType_: function (type) {
+          var classes = "card-type-container " + type + "-card";
+          type = type.charAt(0).toUpperCase() + type.slice(1);
+
+          return (
+            <div className={classes}>
+              <div className="card-type">{type}</div>
+            </div>
+          );
+        },
+
+        flavorText_: function (card) {
+          var className = "episodeNumber";
+          if (card.type === "environment") {
+            className += " environment";
+          }
+
+          return (
+            <div className="text flavor-text">
+              {card.flavorText}
+              <span className="episodeDivider">—</span>
+              <span className="episodeInfo"> 
+                <span className={className}>{card.episode}</span>
+                <span className="episodeTitle">{episodeTitles[card.episode]}</span>
+              </span>
+            </div>
+          );
+        },
+
+        cardTheme_: function (card) {
+          var key = 0;
+          var themes = Array.isArray(card.theme) ? card.theme : [card.theme];
+          themes = themes.map(function (theme) {
+            return (
+              <div className="card-theme" key={key++}>{theme}</div>
+            );
+          });
+
+          return (
+            <div className="card-theme-container">
+              {themes}
+            </div>
+          );
+       },
+
+        body_: function (card) {
+          return (
+            <div>
+              {this.requirements_(card)}
+              {this.description_(card)}
+            </div>
+          );
+        },
+
+        requirements_: function (card) {
+          return null;
+        },
+
+        description_: function (card) {
+          if (!card.description) {
+            return null;
+          } else if (typeof card.description === 'string' ||
+              card.description instanceof String) {
+            return (
+              <div className="text attribute-text">
+                {this.styledDescriptionString_(card.description)}
+              </div>
+            );
+          } else if (Array.isArray(card.description)) {
+            var key = 0;
+            var self = this;
+            var paras = card.description.map(function (string) {
+              var stringInfo = self.getStyleIfPresent_(string);
+              var styleHash = stringInfo[0] ?
+                  { "fontSize": stringInfo[0], "lineHeight": "initial" } : {};
+              string = stringInfo[1];
+
+              return (
+                <p
+                  key={key++} 
+                  style={styleHash}
+                >{self.styledDescriptionString_(string)}</p>
+              );
+            });
+
+            return (
+              <div className="text attribute-text">
+                {paras}
+              </div>
+            );
+          } else {
+            alert("NOPE.  What even is a " + card.description);
+          }
+        },
+
+        playOrdinality_: function (card) {
+          if (card.playOrdinality === null) {
+            return null;
+          } else {
+            return (
+              <div className="ordinality in-play">{card.playOrdinality}</div>
+            );
+          }
+        },
+
+        deckOrdinality_: function (card) {
+          if (card.deckOrdinality === null) {
+            return null;
+          } else {
+            return (
+              <div className="ordinality in-deck">{card.deckOrdinality}</div>
+            );
+          }
+        },
+
+        getStyleIfPresent_: function (string) {
+          var m = string.match(/^([^(]+)\)(.+)$/);
+          if (m) {
+            return [ m[1], m[2] ];
+          } else {
+            return [ null, string ];
+          }
+        },
+
+        styledDescriptionString_: function (string) {
+          var key = 0;
+
+          // handle keywords in [] markers
+          var stringParts = string.split(/[\[\]]/);
+          if (string[0] === "[") {
+            stringParts.unshift("");
+          }
+
+          var elsAfterBrackets = [];
+          for (var c=0; c < stringParts.length; c++) {
+            if (c%2 === 0) {
+              elsAfterBrackets.push(stringParts[c]);
+            } else {
+              var keyword = stringParts[c];
+              var parts = keyword.split("-");
+              if (parts.length === 1) {
+                elsAfterBrackets.push(
+                  <span className="keyword" key={key++}>{keyword}</span>
+                );
+              } else {
+                elsAfterBrackets.push(
+                  <span className="keyword qualified" key={key++}>{parts[0]}
+                    <span className="qualifier" key={key++}>({parts[1]})</span>
+                  </span>
+                );
+              }
+            }
+          }
+
+          // handle terms in _xxx_ syntax
+          var elsAfterUnderscores = [];
+          elsAfterBrackets.forEach(function (el) {
+            if (typeof el === "string") {
+              do {
+                var m = el.match(/^(.*?)_([^_]+)_(.*)$/);
+                if (m) {
+                  elsAfterUnderscores.push(m[1]);
+                  elsAfterUnderscores.push(
+                    <i key={key++}>{m[2]}</i>
+                  );
+                  el = m[3];
+                } else {
+                  elsAfterUnderscores.push(el);
+                  el = null;
+                }
+              } while (el);
+            } else {
+              elsAfterUnderscores.push(el);
+            }
+          });
+
+          var elements = elsAfterUnderscores;
+          var elsAfterScoreAdjust = [];
+          elements.forEach(function (el) {
+            if (typeof el === 'string') {
+              do {
+                var m = el.match(/^(.*?)([+-][+-])([0-9]+)(.*)$/);
+                if (m) {
+                  elsAfterScoreAdjust.push(m[1]);
+
+                  var className = "score-adjust ";
+                  if (m[2] === "++") {
+                    className += "positive";
+                  } else {
+                    className += "negative";
+                  }
+
+                  var sign = (m[3] === "0") ? "" : m[2].charAt(0);
+
+                  elsAfterScoreAdjust.push(
+                    <span className={className} key={key++}>{sign}{m[3]}</span>
+                  );
+
+                  el = m[4];
+                } else {
+                  elsAfterScoreAdjust.push(el);
+                  el = null;
+                }
+              } while (el);
+            } else {
+              elsAfterScoreAdjust.push(el);
+            }
+          });
+
+          elements = elsAfterScoreAdjust;
+          var resultElements = [];
+          elements.forEach(function (el) {
+            if (typeof el === 'string') {
+              do {
+                var m = el.match(/^(.*?){([^}]+)}(.*)$/);
+                if (m) {
+                  resultElements.push(m[1]);
+                  var className = m[2] + " icon";
+                  resultElements.push(
+                    <span className={className} key={key++}></span>
+                  );
+                  el = m[3];
+                } else {
+                  resultElements.push(el);
+                  el = null;
+                }
+              } while (el);
+            } else {
+              resultElements.push(el);
+            }
+          });
+
+          return resultElements;
+        },
+
+        environmentMark_: function () {
+          return (
+            <div className="value environment">
+              <img src="CardImages/right-facing-armenian-eternity-sign.png" />
+            </div>
+          );
+        },
+
+        drawValue_: function (card) {
+          var value = card.drawValue ? card.drawValue :
+                Math.floor(Math.random() * 6) + 1;
+          return (
+            <div className="value draw-value">{value}</div>
+          );
+        },
+
+        pointValue_: function (card) {
+          var styles = "value point-value ";
+          var value = card.pointValue;
+
+          if (typeof value === "string") {
+            styles += value;
+            value = "";
+          } else {
+            styles += (card.pointValue < 0) ? "negative" : "positive";
+          }
+
+          return (
+            <div className={styles}>{value}</div>
+          );
+        },
+
+        circumstances_: function (card) {
+          var key = 0;
+          var self = this;
+          var elements = [];
+
+          ["requires", "establishes"].forEach(function (column) {
+            var circumstances = card[column + "Circumstances"];
+            if (circumstances) {
+              ["progress", "opposition", "jeopardy"].
+                  forEach(function (kind) {
+                var circumstance = circumstances[kind];
+                elements.push(
+                    self.cicumstance_(column, kind, circumstance, key++)
+                );
+                if (circumstance === 2) {
+                  elements.push(
+                      self.cicumstance_(column, kind, "second", key++)
+                  );
+                }
+              });
+            }
+          });
+
+          return (
+            <div>
+              {elements}
+            </div>
+          );
+        },
+
+        cicumstance_: function (column, kind, circumstance, key) {
+          var className = "circumstance " + column + " " + kind;
+          if (circumstance === "second" ||
+              circumstance === "not") {
+            className += " " + circumstance;
+          }
+
+          if (!circumstance) {
+            className += " missing";
+            return (
+              <div className={className} key={key}></div>
+            );
+          } else {
+            var body = "";
+            if (circumstance === "pass") {
+              body = "▸ ▸ ▸ ▸";
+            } else if (circumstance === "prev") {
+              body = "« « « «";
+            } else if (circumstance === "not") {
+              body = "✖ ✖ ✖ ✖";
+            }
+
+            return (
+              <div className={className} key={key}>
+                {body}
+              </div>
+            );
+          }
+        },
+
+        roundOutline_: function (type) {
+          var classNames = "round-outline " + type +"-outline";
+          return (
+            <div className="round-outline-container">
+              <div className={classNames}>
+                <div className="round-outline-top-edge">
+                  <span className="round-outline-top"></span>
+                  <span className="round-outline-up-left"></span>
+                  <span className="round-outline-up-right"></span>
+                </div>
+                <div className="round-outline-middle">
+                  <span className="round-outline-left-edge"></span>
+                  <span className="round-outline-right-edge"></span>
+                </div>
+                <div className="round-outline-bottom-edge">
+                  <span className="round-outline-bottom"></span>
+                  <span className="round-outline-down-left"></span>
+                  <span className="round-outline-down-right"></span>
+                </div>
+                <span className="round-outline-center"></span>
+              </div>
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <Cards
+          cards={cards}
+        />,
+        document.getElementById("react-root")
+      );
+    </script>
+  </body>
+</html>
