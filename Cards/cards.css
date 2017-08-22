@@ -211,6 +211,7 @@ body > * {
 }
 .image-frame img {
   width: 100%;
+  max-height: 133px;
 }
 .cc {
   position: absolute;

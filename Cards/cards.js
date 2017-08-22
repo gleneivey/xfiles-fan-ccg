@@ -95,6 +95,27 @@ var cards = [
   },
 
   {
+    "name": "With Their Liver Ripped Out",
+    "nameExtraStyles": "{'fontSize': '14px'}",
+    "episode": "01x02",
+    "type": "case",
+    "theme": [
+      "Cryptozoology",
+      "Law Enforcement"
+    ],
+    "pointValue": 10,
+    "playOrdinality": null,
+    "deckOrdinality": 2,
+    "flavorText": "“Yeah, well, I’ve got this case that’s, out there.”",
+    "imageFile": "bloodOnCarpet.jpg",
+    "imageReference": "01x02-0242",
+    "description": "Requires [FBI].",
+    "establishesCircumstances": {
+      "progress": true
+    }
+  },
+
+  {
     "name": "Observation Changes Outcome",
     "nameExtraStyles": "{'fontSize': '13px'}",
     "episode": "01x00",
@@ -148,6 +169,22 @@ var cards = [
     "requiresCircumstances": {
       "progress": "not",
       "opposition": true
+    }
+  },
+
+  {
+    "name": "Inadequate Cell",
+    "episode": "01x01",
+    "type": "conclusion",
+    "pointValue": 5,
+    "playOrdinality": null,
+    "deckOrdinality": 3,
+    "flavorText": "“”",
+    "imageFile": "inadequateCell.jpg",
+    "imageReference": "01x01-4148",
+    "description": [
+    ],
+    "requiresCircumstances": {
     }
   },
 
@@ -473,9 +510,7 @@ var cards = [
     "flavorText": "“As I said, I can provide you with information, but only so long as it’s in my best interest to do so.”",
     "imageFile": "vagueEncouragement.jpg",
     "imageReference": "01x01-d4420",
-    "description": [
-      "When the round is over, determine the score ignoring this card. Then, if the score is negative, this card increases it to ++0."
-    ],
+    "description": "When the round is over, determine the score ignoring this card. Then, if the score is negative, this card increases it to ++0.",
     "requiresCircumstances": {
       "progress": "prev",
       "opposition": "prev",
@@ -485,6 +520,75 @@ var cards = [
       "progress": "pass",
       "opposition": "pass",
       "jeopardy": "pass"
+    }
+  },
+
+  {
+    "name": "Psych Profile",
+    "episode": "01x02",
+    "type": "following",
+    "pointValue": 5,
+    "playOrdinality": 2,
+    "deckOrdinality": "+",
+    "flavorText": "“The extraction of the liver is the most significant detail of these crimes. The liver possesses regenerative qualities…”",
+    "imageFile": "psychProfile.jpg",
+    "imageReference": "01x02-",
+    "description": [
+      "Provides [Right Place]."
+    ],
+    "requiresCircumstances": {
+      "progress": true
+    },
+    "establishesCircumstances": {
+      "progress": true,
+      "opposition": "pass",
+      "jeopardy": "pass"
+    }
+  },
+
+  {
+    "name": "He Sees You",
+    "episode": "01x02",
+    "type": "following",
+    "pointValue": -10,
+    "playOrdinality": null,
+    "deckOrdinality": 4,
+    "flavorText": "“Oh, wait, I'm snagged on something. No, it's ok, I got it.”",
+    "imageFile": "heSeesYou.jpg",
+    "imageReference": "01x02-3420",
+    "description": [
+      "Provides [Evidence]"
+    ],
+    "requiresCircumstances": {
+      "progress": true
+    },
+    "establishesCircumstances": {
+      "progress": true,
+      "opposition": "pass",
+      "jeopardy": true
+    }
+  },
+
+  {
+    "name": "Not Really Alone",
+    "episode": "01x02",
+    "type": "following",
+    "pointValue": -10,
+    "playOrdinality": null,
+    "deckOrdinality": 4,
+    "flavorText": "“Mulder, you must've gone out since Colton gave us the night off…”",
+    "imageFile": "notReallyAlone.jpg",
+    "imageReference": "01x02-3718",
+    "description": [
+      "Apply an additional --20 to the round's score unless a card is played between this card and the _Conclusion_ that removes {jeopardy}."
+    ],
+    "requiresCircumstances": {
+      "jeopardy": true
+    },
+    "establishesCircumstances": {
+      "progress": "pass",
+      "opposition": "pass",
+      "jeopardy": true
     }
   }
 ];
