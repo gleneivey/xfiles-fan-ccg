@@ -4,8 +4,8 @@ var cards = [
     "episode": "01x00",
     "type": "environment",
     "drawValue": 2,
-    "bio": "“You're a medical doctor, you teach at the academy. You did your undergraduate degree in physics.”",
-    "flavorText": "“I'm here to solve this case, Mulder, I want the truth.”",
+    "bio": "“You’re a medical doctor, you teach at the academy. You did your undergraduate degree in physics.”",
+    "flavorText": "“I’m here to solve this case, Mulder, I want the truth.”",
     "imageFile": "danaScully-01x00.jpg",
     "imageReference": "01x00-d1944",
     "provides": [
@@ -20,7 +20,7 @@ var cards = [
     "episode": "01x00",
     "type": "environment",
     "drawValue": 1,
-    "bio": "“He's an Oxford educated psychologist, who wrote a monograph on serial killers and the occult, that helped to catch Monty Props in 1988.”",
+    "bio": "“He’s an Oxford educated psychologist, who wrote a monograph on serial killers and the occult, that helped to catch Monty Props in 1988.”",
     "flavorText": "“The truth? I think those kids have been abducted.”",
     "imageFile": "foxMulder-01x00.jpg",
     "imageReference": "01x00-d2007",
@@ -37,7 +37,7 @@ var cards = [
     "episode": "01x00",
     "type": "environment",
     "drawValue": 2,
-    "flavorText": "“the FBI's most unwanted”",
+    "flavorText": "“the FBI’s most unwanted”",
     "imageFile": "xfiles-01x00.jpg",
     "imageReference": "01x00-d0509",
     "themes": [
@@ -50,7 +50,7 @@ var cards = [
   },
 
   {
-    "name": "Fourth Dead in the Class of '89",
+    "name": "Fourth Dead in the Class of ’89",
     "episode": "01x00",
     "nameExtraStyles": "{'fontSize': '13px'}",
     "type": "case",
@@ -77,11 +77,11 @@ var cards = [
     "name": "#DF101364",
     "episode": "01x01",
     "type": "case",
-    "theme": "Gov  Conspiracy",
+    "theme": "Gov Conspiracy",
     "pointValue": 5,
     "playOrdinality": null,
     "deckOrdinality": 3,
-    "flavorText": "“We got him but he's gonna need a doctor... or something.”",
+    "flavorText": "“We got him but he’s gonna need a doctor... or something.”",
     "imageFile": "budahasWithBurns.jpg",
     "imageReference": "01x01-d0109",
     "description": [
@@ -132,13 +132,13 @@ var cards = [
   },
 
   {
-    "name": "We Don't Know Anything!",
+    "name": "We Don’t Know Anything!",
     "episode": "01x01",
     "type": "conclusion",
     "pointValue": 1,
     "playOrdinality": null,
     "deckOrdinality": 3,
-    "flavorText": "“Let's get out of here Mulder, as fast as we can.”",
+    "flavorText": "“Let’s get out of here Mulder, as fast as we can.”",
     "imageFile": "weDontKnowAnything.jpg",
     "imageReference": "01x01-d4222",
     "description": [
@@ -159,7 +159,7 @@ var cards = [
     "pointValue": 10,
     "playOrdinality": null,
     "deckOrdinality": 2,
-    "flavorText": "“It's probably a safe bet Ray Soames never made the varsity basketball team.”",
+    "flavorText": "“It’s probably a safe bet Ray Soames never made the varsity basketball team.”",
     "imageFile": "notANormalBody.jpg",
     "imageReference": "01x00-d1423",
     "description": "Provides [Body].",
@@ -181,7 +181,7 @@ var cards = [
     "pointValue": 18,
     "playOrdinality": null,
     "deckOrdinality": null,
-    "flavorText": "“However, does not account for small unidentified object found in subject's nasal cavity. A grey metallic implant form...”",
+    "flavorText": "“However, does not account for small unidentified object found in subject’s nasal cavity. A grey metallic implant form...”",
     "imageFile": "nasalCavityImplant.jpg",
     "imageReference": "01x00-d1607",
     "description": [
@@ -230,7 +230,7 @@ var cards = [
     "pointValue": 10,
     "playOrdinality": null,
     "deckOrdinality": 2,
-    "flavorText": "“Well, it can't be aircraft. Aircraft can't manoeuvre like that.” “What else could they be?”",
+    "flavorText": "“Well, it can’t be aircraft. Aircraft can’t manoeuvre like that.” “What else could they be?”",
     "imageFile": "scullyMulderWatchCraft.jpg",
     "imageReference": "01x01-d1714",
     "description": "Provides [Sighting].",
@@ -275,7 +275,7 @@ var cards = [
     "pointValue": -10,
     "playOrdinality": 3,
     "deckOrdinality": "+",
-    "flavorText": "“I did see something, but it's gone, they took it from me, they erased it.”",
+    "flavorText": "“I did see something, but it’s gone, they took it from me, they erased it.”",
     "imageFile": "evidenceForgotten.jpg",
     "imageReference": "01x01-d3822",
     "description": [
@@ -306,7 +306,7 @@ var cards = [
     "imageReference": "01x00-d2751",
     "description": [
       "Requires [MULDER].",
-      "70%)If player who played this card also plays the _Conclusion_ to end the round, then after determining score for the round, move this card to player's side of [MULDER] and apply bonus to _Investment_ while it remains."
+      "70%)If player who played this card also plays the _Conclusion_ to end the round, then after determining score for the round, move this card to player’s side of [MULDER] and apply bonus to _Investment_ while it remains."
     ],
     "investmentText": "Trust in partner",
     "investmentValue": 1,
@@ -329,7 +329,7 @@ var cards = [
     "pointValue": 15,
     "playOrdinality": null,
     "deckOrdinality": 3,
-    "flavorText": "“That's the reason the kids come to the forest, because the forest controls them and summons them there.”",
+    "flavorText": "“That’s the reason the kids come to the forest, because the forest controls them and summons them there.”",
     "imageFile": "theForestControlsThem.jpg",
     "imageReference": "01x00-d3611",
     "description": [
@@ -354,7 +354,7 @@ var cards = [
     "pointValue": 10,
     "playOrdinality": null,
     "deckOrdinality": 4,
-    "flavorText": "“I'm with the County Sheriff's Department. You're trespassing on private property here.”",
+    "flavorText": "“I’m with the County Sheriff’s Department. You’re trespassing on private property here.”",
     "imageFile": "complicitSheriff.jpg",
     "imageReference": "01x00-d2202",
     "description": [
@@ -424,12 +424,12 @@ var cards = [
     "pointValue": "negative",
     "playOrdinality": null,
     "deckOrdinality": 2,
-    "flavorText": "“Hey, don't go past the edge of the tall weeds.”",
+    "flavorText": "“Hey, don’t go past the edge of the tall weeds.”",
     "imageFile": "captureInevitable.jpg",
     "imageReference": "01x01-3348",
     "description": [
       "Provides [Capture]",
-      "80%)When played, move an {environment}_Character_ to this card's location in the round. Return it if this card is negated. While it is with this card, new cards dependent on the _Character_ cannot be played, and already-played dependent cards do not score."
+      "80%)When played, move an {environment}_Character_ to this card’s location in the round. Return it if this card is negated. While it is with this card, new cards dependent on the _Character_ cannot be played, and already-played dependent cards do not score."
     ],
     "requiresCircumstances": {
       "progress": true
@@ -447,7 +447,7 @@ var cards = [
     "pointValue": 10,
     "playOrdinality": null,
     "deckOrdinality": 2,
-    "flavorText": "“Yeah, I've already seen where you get with tears and a sad story.”",
+    "flavorText": "“Yeah, I’ve already seen where you get with tears and a sad story.”",
     "imageFile": "hostageTrade.jpg",
     "imageReference": "01x01-3953",
     "description": [
@@ -470,7 +470,7 @@ var cards = [
     "pointValue": "positive",
     "playOrdinality": null,
     "deckOrdinality": 3,
-    "flavorText": "“As I said, I can provide you with information, but only so long as it's in my best interest to do so.”",
+    "flavorText": "“As I said, I can provide you with information, but only so long as it’s in my best interest to do so.”",
     "imageFile": "vagueEncouragement.jpg",
     "imageReference": "01x01-d4420",
     "description": [
