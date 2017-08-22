@@ -14,8 +14,8 @@ body > * {
   margin: 8px;
 }
 .print .card-container {
-  width: 280px;
-  height: 384px;
+  width: 260px;
+  height: 356px;
 }
 
 .template-outline {
@@ -32,8 +32,8 @@ body > * {
   border-radius: 3mm;
 }
 .print .template-outline {
-  top: 20px;
-  left: 20px;
+  top: 10px;
+  left: 10px;
 }
 
 .round-outline-container {
@@ -447,8 +447,8 @@ p {
   border: solid black;
 }
 .crop-margin {
-  height: 6px;
-  width: 6px;
+  height: 4.5px;
+  width: 4.5px;
   background: #ffffff;
 }
 .crop-marks.ul {
@@ -472,19 +472,19 @@ p {
   right: -19px;
 }
 .crop-margin.ul {
-  top: -6px;
-  left: -6px;
+  top: -4px;
+  left: -4px;
 }
 .crop-margin.dl {
-  bottom: -6px;
-  left: -6px;
+  bottom: -4px;
+  left: -4px;
 }
 .crop-margin.ur {
-  top: -6px;
-  right: -6px;
+  top: -4px;
+  right: -4px;
 }
 .crop-margin.dr {
-  bottom: -6px;
-  right: -6px;
+  bottom: -4px;
+  right: -4px;
 }
 
