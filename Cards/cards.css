@@ -216,12 +216,12 @@ body > * {
   transform: rotate(90deg);
 }
 .copyright-attribution {
-  top: -7px;
-  left: -10px;
+  top: -6px;
+  left: -8px;
 }
 .copyright-reservation {
-  top: -7px;
-  right: -114px;
+  top: -6px;
+  right: -120px;
 }
 
 .card-set-logo {
@@ -240,6 +240,8 @@ body > * {
   line-height: 12px;
 }
 .card-set-logo img {
+  position: relative;
+  top: 1px;
   width: 10px;
   height: 10px;
 }
@@ -314,8 +316,12 @@ p {
   font-weight: bold;
   font-style: normal;
 }
-.episodeTitle:before, .episodeTitle:after {
-  content: "\"";
+.episodeTitle:before {
+  content: "“";
+  font-weight: normal;
+}
+.episodeTitle:after {
+  content: "”";
   font-weight: normal;
 }
 
