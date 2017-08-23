@@ -532,7 +532,7 @@ var cards = [
     "deckOrdinality": "+",
     "flavorText": "“The extraction of the liver is the most significant detail of these crimes. The liver possesses regenerative qualities…”",
     "imageFile": "psychProfile.jpg",
-    "imageReference": "01x02-",
+    "imageReference": "01x02-1141",
     "description": [
       "Provides [Right Place]."
     ],
