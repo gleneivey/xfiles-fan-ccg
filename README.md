@@ -17,7 +17,7 @@ and evolution on Twitter
 
 At the moment, the card set is defined by the
 [JSON-format](https://wikipedia.org/wiki/JSON) data file
-`Cards/cards.js`.
+[`Cards/cards.js`](https://github.com/gleneivey/xfiles-fan-ccg/blob/master/Cards/cards.js).
 
 To view the cards,
 [clone](https://help.github.com/articles/cloning-a-repository/) this
