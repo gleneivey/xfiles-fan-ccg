@@ -1,4 +1,10 @@
 ---
 ---
 
-Types of cards, symbols on cards, all the card things.
+Guide to Cards
+==============
+
+[This page will list all the types of cards, features of each card,
+etc.]
+
+
