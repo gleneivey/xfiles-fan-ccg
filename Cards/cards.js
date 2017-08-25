@@ -179,12 +179,15 @@ var cards = [
     "pointValue": 5,
     "playOrdinality": null,
     "deckOrdinality": 3,
-    "flavorText": "“”",
+    "flavorText": "“I look at this guy and I think, \"It ain't enough\".”",
     "imageFile": "inadequateCell.jpg",
     "imageReference": "01x01-4148",
     "description": [
+      "Requires [Suspect]."
     ],
     "requiresCircumstances": {
+      "progress": true,
+      "jeopardy": "prev"
     }
   },
 

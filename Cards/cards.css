@@ -278,7 +278,7 @@ p {
 }
 .flavor-text, .bio-text {
   font-size: 9px;
-  line-height: 9px;
+  line-height: 10px;
   font-style: italic;
   padding-left: 4px;
 }
