@@ -109,7 +109,10 @@ var cards = [
     "flavorText": "“Yeah, well, I’ve got this case that’s, out there.”",
     "imageFile": "bloodOnCarpet.jpg",
     "imageReference": "01x02-0242",
-    "description": "Requires [FBI].",
+    "description": [
+      "Requires [FBI].",
+      "Provides [Homicide]."
+    ],
     "establishesCircumstances": {
       "progress": true
     }
@@ -550,6 +553,30 @@ var cards = [
   },
 
   {
+    "name": "Arrested",
+    "episode": "01x02",
+    "type": "following",
+    "pointValue": 10,
+    "playOrdinality": 2,
+    "deckOrdinality": 4,
+    "flavorText": "“Federal Agent, I'm armed. Proceed down the vent, slowly.”",
+    "imageFile": "arrested.jpg",
+    "imageReference": "01x02-1449",
+    "description": [
+      "Requires [Right Place]",
+      "Provides [Suspect]"
+    ],
+    "requiresCircumstances": {
+      "progress": true
+    },
+    "establishesCircumstances": {
+      "progress": true,
+      "opposition": "pass",
+      "jeopardy": "pass"
+    }
+  },
+
+  {
     "name": "He Sees You",
     "episode": "01x02",
     "type": "following",
@@ -593,7 +620,37 @@ var cards = [
       "opposition": "pass",
       "jeopardy": true
     }
-  }
+  },
+
+  {
+    "name": "Too Close",
+    "episode": "01x02",
+    "type": "following",
+    "pointValue": "negative",
+    "playOrdinality": null,
+    "deckOrdinality": 4,
+    "flavorText": "“Err, that vent is six inches by about eighteen, even if a Reticulan could crawl through…”",
+    "imageFile": "gotYourLeg.jpg",
+    "imageReference": "01x02-3814",
+    "description": [
+      "Apply an additional --20 to the round's score unless a card is played between this card and the _Conclusion_ that removes {jeopardy}."
+    ],
+    "requiresCircumstances": {
+      "jeopardy": "2prev"
+    },
+    "establishesCircumstances": {
+      "progress": false,
+      "opposition": "pass",
+      "jeopardy": true
+    }
+  },
+
+
+  //       cards to-do:
+  //    Scully/Mulder stop Tooms from killing Scully
+  //    Is there any way I can get it off my fingers quickly without betraying my cool exterior?
+  //    Tooms' polygraph; requires believer, provides something
+  //    maybe-fingerprint-match; something-something-evidence
 ];
 
 

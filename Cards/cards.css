@@ -16,6 +16,7 @@ body > * {
 .print .card-container {
   width: 260px;
   height: 356px;
+  margin-top: 22px;
 }
 
 .template-outline {

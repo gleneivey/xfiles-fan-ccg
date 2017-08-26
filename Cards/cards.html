@@ -541,9 +541,14 @@
                 elements.push(
                     self.cicumstance_(column, kind, circumstance, key++)
                 );
-                if (circumstance === 2) {
+                if (typeof circumstance === "string" &&
+                    parseInt(circumstance) === 2) {
+                  var second = "second";
+                  if (circumstance.includes('prev')) {
+                    second += " prev";
+                  }
                   elements.push(
-                      self.cicumstance_(column, kind, "second", key++)
+                      self.cicumstance_(column, kind, second, key++)
                   );
                 }
               });
@@ -559,9 +564,16 @@
 
         cicumstance_: function (column, kind, circumstance, key) {
           var className = "circumstance " + column + " " + kind;
-          if (circumstance === "second" ||
-              circumstance === "not") {
-            className += " " + circumstance;
+
+          if (typeof circumstance === "string") {
+            ["second", "not"].forEach(function (key) {
+              if (circumstance.includes(key)) {
+                circumstance = circumstance.replace(key, "");
+                className += " " + key
+              }
+            });
+
+            circumstance = circumstance.trim();
           }
 
           if (!circumstance) {
