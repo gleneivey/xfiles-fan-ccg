@@ -436,6 +436,7 @@
             }
           });
 
+          // handle ++ and -- numbers
           var elements = elsAfterUnderscores;
           var elsAfterScoreAdjust = [];
           elements.forEach(function (el) {
@@ -469,6 +470,7 @@
             }
           });
 
+          // handle icon references in {xxx} syntax
           elements = elsAfterScoreAdjust;
           var resultElements = [];
           elements.forEach(function (el) {
@@ -515,16 +517,26 @@
           var styles = "value point-value ";
           var value = card.pointValue;
 
-          if (typeof value === "string") {
-            styles += value;
-            value = "";
-          } else {
-            styles += (card.pointValue < 0) ? "negative" : "positive";
-          }
+          if (["conflict"].includes(value)) {
+            styles += "neutral " + value;
 
-          return (
-            <div className={styles}>{value}</div>
-          );
+            return (
+              <div className={styles}>
+                <img src={"CardImages/" + value + ".png"} />
+              </div>
+            );
+          } else {
+            if (typeof value === "string") {
+              styles += value;
+              value = "";
+            } else {
+              styles += (card.pointValue < 0) ? "negative" : "positive";
+            }
+
+            return (
+              <div className={styles}>{value}</div>
+            );
+          }
         },
 
         circumstances_: function (card) {

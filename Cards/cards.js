@@ -645,9 +645,34 @@ var cards = [
     }
   },
 
+  {
+    "name": "Disrupted Ambush",
+    "episode": "01x02",
+    "type": "following",
+    "pointValue": "conflict",
+    "playOrdinality": null,
+    "deckOrdinality": 4,
+    "flavorText": "“He's not gonna get his quota this year.”",
+    "imageFile": "disruptedAmbush.jpg",
+    "imageReference": "01x02-3846",
+    "description": [
+      "Pro: requires 2x[FBI]; {conflict}: player's choice 1 [Agent] + their arms.",
+      "Anti: {conflict}: (#{jeopardy} -1) + player's arms.",
+      "Success: provides [Suspect], ++10.",
+      "Failure: chosen [Agent] disabled."
+    ],
+    "requiresCircumstances": {
+      "jeopardy": true
+    },
+    "establishesCircumstances": {
+      "progress": true,
+      "opposition": "pass",
+      "jeopardy": false
+    }
+  },
+
 
   //       cards to-do:
-  //    Scully/Mulder stop Tooms from killing Scully
   //    Is there any way I can get it off my fingers quickly without betraying my cool exterior?
   //    Tooms' polygraph; requires believer, provides something
   //    maybe-fingerprint-match; something-something-evidence
