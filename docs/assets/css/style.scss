@@ -32,6 +32,19 @@ header p, footer p {
   padding-right: 8px;
 }
 
+section {
+  position: relative;
+}
+img.gutter.card {
+  position: absolute;
+  width: 200px;
+}
+img.gutter.card.left {
+  left: -200px;
+}
+img.gutter.card.right {
+  right: -200px;
+}
 
 .sidebar-toc {
   margin-bottom: 20px;
