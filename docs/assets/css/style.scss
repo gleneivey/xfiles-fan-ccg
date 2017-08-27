@@ -3,18 +3,42 @@
 
 @import "{{ site.theme }}";
 
-section {
+body {
   font-size: 16px;
+  color: #000;
 }
+
+section {
+  font-size: 18px;
+}
+p {
+  clear: both;
+}
+
+blockquote p {
+  width: 80%;
+  float: right;
+  font-size: 14px;
+  padding: 8px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+
+header h1, header h2, header h3, header h4,
+header p, footer p {
+  background-color: #ffffff;
+  width: fit-content;
+  padding-right: 8px;
+}
+
 
 .sidebar-toc {
   margin-bottom: 20px;
 }
-
 .sidebar-toc h4 {
   margin-bottom: 4px;
 }
-
 .sidebar-toc p {
   margin-bottom: 0px;
 }
