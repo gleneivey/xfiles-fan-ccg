@@ -24,6 +24,9 @@ blockquote p {
   border-radius: 5px;
 }
 
+header {
+  z-index: +1;
+}
 
 header h1, header h2, header h3, header h4,
 header p, footer p {

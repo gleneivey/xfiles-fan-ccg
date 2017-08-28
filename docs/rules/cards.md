@@ -8,3 +8,6 @@ Guide to Cards
 etc.]
 
 
+
+[Next &rarr; _Sequence of Play_](/xfiles-fan-ccg/rules/order)
+

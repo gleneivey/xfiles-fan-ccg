@@ -610,7 +610,7 @@ var cards = [
     "imageFile": "notReallyAlone.jpg",
     "imageReference": "01x02-3718",
     "description": [
-      "Apply an additional --20 to the round's score unless a card is played between this card and the _Conclusion_ that removes {jeopardy}."
+      "Add --20 to the round's score unless a card is played between this card and the _Conclusion_ that removes {jeopardy}."
     ],
     "requiresCircumstances": {
       "jeopardy": true
@@ -633,7 +633,7 @@ var cards = [
     "imageFile": "gotYourLeg.jpg",
     "imageReference": "01x02-3814",
     "description": [
-      "Apply an additional --20 to the round's score unless a card is played between this card and the _Conclusion_ that removes {jeopardy}."
+      "Add --20 to the round's score unless a card is played between this card and the _Conclusion_ that removes {jeopardy}."
     ],
     "requiresCircumstances": {
       "jeopardy": "2prev"

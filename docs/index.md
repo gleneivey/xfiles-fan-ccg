@@ -53,3 +53,4 @@ availability or impose rarity.  However, it is designed to meet the
 conventions of a collectible card game and could be distributed in
 increments of "decks" and (randomized) "booster packs" of cards.
 
+[Next &rarr; _Game Introduction_](/xfiles-fan-ccg/rules/intro)
