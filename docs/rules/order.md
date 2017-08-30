@@ -44,7 +44,7 @@ Setup:
     1. At the start of their turn, the player draws cards to fill their hand
     2. On their turn, a player must play a _Case_, _Incident_, _Following_, or _Conclusion_ card, or pass
     3. A player cannot pass if they have a card they can legally play in the round
-    4. _**Speculative:** Probably will be other card types playable in a turn, but only _after_ a card is added to the round_
+    4. After playing a card to the table for the round, the player may play an _Action_ card.
 6. End of period
     1. The period ends at the end of the round in which
     2. If the game is not yet over, players may exchange cards between their draw decks and sideboards

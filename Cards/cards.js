@@ -671,9 +671,19 @@ var cards = [
     }
   },
 
+  {
+    "name": "Off My Fingers",
+    "episode": "01x02",
+    "type": "action",
+    "deckOrdinality": 4,
+    "flavorText": "“Is there any way I can get it off my fingers quickly without betraying my cool exterior?”",
+    "imageFile": "coolExterior.jpg",
+    "imageReference": "01x02-3304",
+    "description": "Reveal this card to your opponent from your hand, then place it and two additional unrevealed cards in your discard pile."
+  },
+
 
   //       cards to-do:
-  //    Is there any way I can get it off my fingers quickly without betraying my cool exterior?
   //    Tooms' polygraph; requires believer, provides something
   //    maybe-fingerprint-match; something-something-evidence
 ];

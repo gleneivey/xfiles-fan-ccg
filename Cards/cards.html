@@ -67,6 +67,8 @@
               cardElements = self.conclusionCard_(card);
             } else if (card.type === "following") {
               cardElements = self.followingCard_(card);
+            } else if (card.type === "action") {
+              cardElements = self.actionCard_(card);
             }
             return cardElements
           });
@@ -164,6 +166,23 @@
               {this.deckOrdinality_(card)}
               {this.circumstances_(card)}
               {this.investment_(card)}
+              {this.drawValue_(card)}
+              {this.pointValue_(card)}
+            </Card>
+          );
+        },
+
+        actionCard_: function (card) {
+          card.pointValue = "action";
+
+          return (
+            <Card cardNum={card.cardNum}>
+              {this.heading_(card)}
+              {this.image_(card)}
+              {this.flavorText_(card)}
+              {this.body_(card)}
+
+              {this.deckOrdinality_(card)}
               {this.drawValue_(card)}
               {this.pointValue_(card)}
             </Card>
@@ -517,7 +536,7 @@
           var styles = "value point-value ";
           var value = card.pointValue;
 
-          if (["conflict"].includes(value)) {
+          if (["conflict", "action"].includes(value)) {
             styles += "neutral " + value;
 
             return (
