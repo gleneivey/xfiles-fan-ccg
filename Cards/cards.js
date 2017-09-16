@@ -119,6 +119,30 @@ var cards = [
   },
 
   {
+    "name": "Abducted Near Okobogee",
+    "nameExtraStyles": "{'fontSize': '15px'}",
+    "episode": "01x03",
+    "type": "case",
+    "theme": [
+      "Alien Encounters",
+      "Law Enforcement"
+    ],
+    "pointValue": 10,
+    "playOrdinality": null,
+    "deckOrdinality": 4,
+    "flavorText": "“Mom! Ruby's gone.”",
+    "imageFile": "darleneAndKevin.jpg",
+    "imageReference": "01x03-0202",
+    "description": [
+      "Requires [FBI].",
+      "Provides [Missing Person]."
+    ],
+    "establishesCircumstances": {
+      "progress": true
+    }
+  },
+
+  {
     "name": "Observation Changes Outcome",
     "nameExtraStyles": "{'fontSize': '13px'}",
     "episode": "01x00",
@@ -150,9 +174,7 @@ var cards = [
     "description": [
       "Requires [MULDER] with _Investment_ of +2 or less.",
       "Playable only immediately following a _Case_."
-    ],
-    "requiresCircumstances": {
-    }
+    ]
   },
 
   {
@@ -177,14 +199,14 @@ var cards = [
 
   {
     "name": "Inadequate Cell",
-    "episode": "01x01",
+    "episode": "01x02",
     "type": "conclusion",
     "pointValue": 5,
     "playOrdinality": null,
     "deckOrdinality": 3,
     "flavorText": "“I look at this guy and I think, \"It ain't enough\".”",
     "imageFile": "inadequateCell.jpg",
-    "imageReference": "01x01-4148",
+    "imageReference": "01x02-4148",
     "description": [
       "Requires [Suspect]."
     ],
@@ -192,6 +214,34 @@ var cards = [
       "progress": true,
       "jeopardy": "prev"
     }
+  },
+
+  {
+    "name": "Solved the Wrong Case",
+    "episode": "01x03",
+    "type": "conclusion",
+    "pointValue": -5,
+    "playOrdinality": null,
+    "deckOrdinality": 4,
+    "flavorText": "“It's over Mulder. It's time to go home and turn this over to local law enforcement.”",
+    "imageFile": "wrongCase.jpg",
+    "imageReference": "01x03-3205",
+    "description": "Requires [Law Enforcement], [Evidence]."
+  },
+
+  {
+    "name": "I'm Not Supposed to Tell",
+    "episode": "01x03",
+    "type": "conclusion",
+    "pointValue": 15,
+    "playOrdinality": null,
+    "deckOrdinality": 1,
+    "flavorText": "“They told me not to say.” “Ruby, who told you?” “Sweetheart, you don't have to say anything.”",
+    "imageFile": "notSupposedToTell.jpg",
+    "imageReference": "01x03-4025",
+    "description": [
+      "Requires [Alien Encounters], _Abduction_, [Evidence]."
+    ]
   },
 
   {
